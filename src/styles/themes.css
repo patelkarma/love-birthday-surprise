@@ -1,0 +1,6 @@
+.romantic-section {
+  background: var(--bg-overlay);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+}

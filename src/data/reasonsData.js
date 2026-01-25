@@ -1,0 +1,30 @@
+const reasons = [
+  "You are my once-in-a-lifetime kind of love 💫",
+  "The kind of love people wait for… I found that love in you 🫶",
+  "You are precious to me in ways words will never fully hold 💎",
+  "My heart feels safest when it’s with you 🤍",
+  "Loving you is the most natural and most beautiful thing I’ve ever done 🌷",
+  "You are my calm in chaos, my home in every storm 🌧️🏡",
+  "Even on your quiet days, you mean the world to me 🌍",
+  "You don’t just make me happy… you make me whole 🧩❤️",
+  "My favorite place will always be right beside you 👣💞",
+  "Your presence alone feels like a blessing I never asked for but always needed ✨ so blessed and gratefull to have you 🫶",
+  "You are not just loved… you are cherished 🥺💗 and promise you will always be cherished like this 💗💗 ",
+  "Every version of me chooses you, again and again ♾️💑 because its only calm when its around you 🥹💟💝",
+  "You deserve a love that protects you, holds you, and never lets you feel alone 🛡️🤍 And I promise to be that love for you, always 🔒❤️",
+  "Your smile is the best scene i wants to enjoy 🥹💟💝 In your smiles, I find my happiness💫",
+  "In your tears, I find my purpose—to hold you tighter 🤗💖",
+  "You are my biggest blessings and biggest miracle in human form 💟🌟",
+  "I see your heart, your efforts, your pain… and I love all of it with pure heart 🫶",
+  "You are more than enough — more than you’ll ever realize , most precious thing for me ever 💎🫂🥺💗",
+  "My love for you is gentle, deep, and endlessly yours 🌊❤️",
+  "No matter what life brings, my hand will always be in yours 🤝💘",
+  "You are my today, my tomorrow and my always ♾️💍",
+  "I believe in you, even on the days you forget to believe in yourself 🌈 i am here to remind you that you can do evrything you wished to 💘💝",
+  "You deserve every happiness this world can offer and i promise to give it to you 🌍✨",
+  "And if love could speak, it would say your name in my heartbeat 💓",
+  "Forever yours… your blankie, choosing you in every lifetime 🧸❤️",
+  "Happy birthday my cute panda 🥹😘💕💗💟 there are more surprises ahead 🥹💟"
+];
+
+export default reasons;

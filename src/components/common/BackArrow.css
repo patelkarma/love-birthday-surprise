@@ -1,0 +1,23 @@
+.back-arrow {
+  position: fixed;
+  top: 22px;
+  left: 22px;
+  font-size: 1.6rem;
+  color: var(--text-dark);
+  cursor: pointer;
+  z-index: 10;
+  background: var(--bg-overlay);
+  backdrop-filter: blur(10px);
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-soft);
+  transition: all 0.3s ease;
+}
+
+.back-arrow:hover {
+  color: var(--pink-deep-soft);
+}

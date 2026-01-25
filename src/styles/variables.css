@@ -1,0 +1,38 @@
+:root {
+  /* Primary romantic palette */
+  --pink-soft: #f4b6c2;
+  --pink-light: #fde2e7;
+
+  --pink-deep-soft: #e39aa9;
+  --purple-deep-soft: #b09ad9;
+
+  --purple-soft: #c3b4e6;
+  --purple-light: #e6dfff;
+
+  /* Accent (muted red, not shiny) */
+  --red-muted: #c97c7c;
+
+  /* Backgrounds */
+  --bg-gradient-main: linear-gradient(135deg, #fde2e7, #e6dfff, #f4b6c2);
+
+  --bg-overlay: rgba(255, 255, 255, 0.15);
+
+  --text-strong: #b4a3c5;
+  --text-extra-strong: #a0859f;
+  --text-strong-soft: #4a3b5a;
+
+  /* Button stronger gradient */
+  --btn-pink-strong: #d88a9b;
+  --btn-purple-strong: #a48bd8;
+
+  /* Text colors */
+  --text-dark: #4a2f47;
+  --text-soft: #dcccea;
+  --text-light: #ffffff;
+
+  /* Shadows */
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+  /* Border radius */
+  --radius-lg: 20px;
+}

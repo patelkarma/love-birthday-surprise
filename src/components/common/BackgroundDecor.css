@@ -1,0 +1,30 @@
+.background-decor {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.decor-teddy {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  /* DEFAULT (desktop first) */
+  object-position: center;
+
+  opacity: 0.22;
+  filter: blur(1px);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .decor-teddy {
+    object-position: center bottom;
+    opacity: 0.18;
+  }
+}

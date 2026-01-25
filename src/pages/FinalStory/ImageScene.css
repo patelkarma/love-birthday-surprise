@@ -1,0 +1,363 @@
+/* Container for each scene */
+.image-scene {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 5;
+}
+
+/* Keeps image centered and fully visible */
+.image-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* The actual image */
+.scene-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 14px;
+  box-shadow: 0 20px 60px rgba(255, 150, 200, 0.25);
+
+  /* 🚫 Prevent first un-animated paint */
+  opacity: 0;
+  transform: translateZ(0);
+
+  /* Smooth GPU rendering */
+  will-change: transform, opacity;
+}
+
+/* Text overlay */
+.scene-overlay {
+  position: absolute;
+  bottom: 6%;
+  width: 100%;
+  text-align: center;
+  pointer-events: none;
+}
+
+.scene-text {
+  font-size: clamp(1rem, 3vw, 2.2rem);
+  color: #f3c6d8;
+  font-family: "Georgia", serif;
+  text-shadow: 0 0 12px rgba(255, 150, 200, 0.6);
+  padding: 0 1rem;
+}
+
+/* ------------------ */
+/* 🎬 Animations */
+/* ------------------ */
+
+.fade .scene-image {
+  opacity: 0;
+  animation: fadeIn 2s ease both;
+}
+
+.zoom .scene-image {
+  transform: scale(1.15);
+  animation: zoomIn 2s ease both;
+}
+
+.slide-left .scene-image {
+  transform: translateX(60px);
+  opacity: 0;
+  animation: slideLeft 2s ease both;
+}
+
+.slide-right .scene-image {
+  transform: translateX(-60px);
+  opacity: 0;
+  animation: slideRight 2s ease both;
+}
+
+.blur-in .scene-image {
+  filter: blur(10px);
+  opacity: 0;
+  animation: blurIn 2s ease both;
+}
+
+.fade-up .scene-image {
+  transform: translateY(40px);
+  opacity: 0;
+  animation: fadeUp 2s ease both;
+}
+
+.soft-zoom .scene-image {
+  transform: scale(1.05);
+  animation: softZoom 3s ease both;
+}
+
+.glow .scene-image {
+  opacity: 0;
+  animation: glowPulse 3s ease-in-out both;
+}
+
+.finale .scene-image {
+  animation: finaleZoom 6s ease both;
+}
+
+.cinematic-pan .scene-image {
+  transform: scale(1.1) translateX(20px);
+  opacity: 0;
+  animation: cinematicPan 2s ease both;
+}
+
+.soft-zoom .scene-image {
+  transform: scale(1.05);
+  opacity: 0;
+  animation: softZoom 3s ease both;
+}
+
+/* ------------------ */
+/* Keyframes */
+/* ------------------ */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideLeft {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideRight {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes blurIn {
+  to {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes softZoom {
+  from {
+    transform: scale(1.05);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes glowPulse {
+  0% {
+    opacity: 0;
+    box-shadow: 0 0 20px rgba(255, 150, 200, 0.4);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 40px rgba(255, 150, 200, 0.8);
+  }
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 20px rgba(255, 150, 200, 0.4);
+  }
+}
+
+@keyframes finaleZoom {
+  to {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+@keyframes cinematicPan {
+  from {
+    transform: scale(1.1) translateX(20px);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translateX(0);
+    opacity: 1;
+  }
+}
+
+/* ------------------ */
+/* 📱 Mobile Optimizations */
+/* ------------------ */
+
+@media (max-width: 768px) {
+  .scene-overlay {
+    bottom: 6%;
+  }
+
+  .scene-text {
+    font-size: 1rem;
+  }
+
+  .scene-image {
+    max-width: 95%;
+    max-height: 95%;
+  }
+}
+
+/* ========================================= */
+/* 🎬 CINEMATIC LANDSCAPE MODE FOR PHONES */
+/* ========================================= */
+
+@media (max-width: 768px) {
+  /* Rotate ONLY the cinematic scene */
+  .image-scene {
+    width: 100vh;
+    height: 100vw;
+    transform: rotate(90deg);
+    transform-origin: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    overflow: hidden;
+  }
+
+  /* Make sure wrapper always fills the rotated frame */
+  .image-wrapper {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Ensure image always covers the cinematic frame */
+  .scene-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  /* Keep text aligned inside rotated view */
+  .scene-overlay {
+    bottom: 6%;
+  }
+
+  .scene-text {
+    font-size: 1rem;
+    padding: 0 1.5rem;
+  }
+}
+
+/* ========================================= */
+/* 📱 FIX: ENSURE ANIMATIONS WORK ON MOBILE */
+/* ========================================= */
+
+@media (max-width: 768px) {
+  /* Force GPU acceleration for smooth animation */
+  .scene-image {
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+  }
+
+  /* Re-assert animations so mobile browsers don't skip them */
+  .fade .scene-image {
+    animation-duration: 1s;
+  }
+
+  .zoom .scene-image {
+    animation-duration: 1.2s;
+  }
+
+  .slide-left .scene-image,
+  .slide-right .scene-image {
+    animation-duration: 1.2s;
+  }
+
+  .blur-in .scene-image {
+    animation-duration: 1.2s;
+  }
+
+  .fade-up .scene-image {
+    animation-duration: 1.2s;
+  }
+
+  .soft-zoom .scene-image {
+    animation-duration: 1.8s;
+  }
+
+  .glow .scene-image {
+    animation-duration: 2s;
+  }
+
+  .finale .scene-image {
+    animation-duration: 3s;
+  }
+}
+
+/* ========================================= */
+/* 📱 MOBILE: REMOVE BLANK GAPS & SMOOTH SWAP */
+/* ========================================= */
+@media (max-width: 768px) {
+  .image-wrapper {
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  .image-wrapper.hide {
+    opacity: 0;
+  }
+
+  .image-wrapper.show {
+    opacity: 1;
+  }
+
+  /* ❌ REMOVED BLACK BACKGROUND FROM SCENE */
+  /* .image-scene { background: #000; } */
+
+  img {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+}
+
+/* ========================================= */
+/* 📱 MOBILE PERFORMANCE BOOST */
+/* ========================================= */
+@media (max-width: 768px) {
+  /* Remove expensive effects */
+  .scene-image {
+    filter: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Disable blur-based animation on mobile */
+  .blur-in .scene-image {
+    animation: fadeIn 0.8s ease both;
+  }
+
+  /* Reduce glow cost */
+  .glow .scene-image {
+    animation: none;
+    opacity: 1;
+  }
+}

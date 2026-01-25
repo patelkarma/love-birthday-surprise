@@ -1,0 +1,72 @@
+.landing-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.landing-content {
+  text-align: center;
+  max-width: 700px;
+  animation: fadeIn 1.5s ease;
+}
+
+.landing-content h1 {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  line-height: 1.3;
+  color: var(--text-extra-strong);
+}
+
+.landing-content h1 span {
+  color: var(--btn-pink-strong);
+}
+
+.landing-content p {
+  margin-top: 20px;
+  font-size: 1.3rem;
+  color: var(--text-strong);
+  line-height: 1.7;
+}
+
+.start-btn {
+  margin-top: 40px;
+  padding: 14px 36px;
+  font-size: 1rem;
+  border-radius: 50px;
+
+  background: linear-gradient(
+    135deg,
+    var(--btn-pink-strong),
+    var(--btn-purple-strong)
+  );
+
+  color: #ffffff; /* PURE WHITE */
+  box-shadow: 0 12px 35px rgba(164, 139, 216, 0.45);
+  transition: all 0.3s ease;
+}
+
+.start-btn:hover {
+  opacity: 0.95;
+}
+
+.start-btn:hover {
+  filter: brightness(1.05);
+}
+
+.landing-content h1,
+.landing-content p {
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.highlight-text {
+  display: inline;
+  padding: 0;
+  border-radius: 0;
+  background: none;
+  backdrop-filter: none;
+
+  color: inherit; /* 🔥 use same color as h1 */
+  font-weight: inherit; /* 🔥 same weight as h1 */
+  text-shadow: inherit; /* 🔥 same glow as h1 */
+}

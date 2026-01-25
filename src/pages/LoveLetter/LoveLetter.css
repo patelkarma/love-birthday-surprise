@@ -1,0 +1,535 @@
+.loveletter-page {
+  min-height: 100vh;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  position: relative;
+}
+
+/* MAIN LETTER */
+.loveletter-container {
+  width: 100%;
+  max-width: 380px; /* mobile default */
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 22px;
+  padding: 28px 22px;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-radius: 26px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+  position: relative;
+  z-index: 2;
+}
+
+/* LETTER TEXT */
+.loveletter-line {
+  font-family: "Dancing Script", cursive;
+  font-size: 20px;
+  color: rgb(154, 168, 214);
+  text-align: center;
+  line-height: 1.6;
+  margin-bottom: 6px;
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 2px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .loveletter-container {
+    max-width: 680px; /* 👈 wider only on PC */
+    padding: 40px 48px;
+  }
+
+  .loveletter-line {
+    font-size: 22px;
+  }
+}
+
+/* BUTTON */
+.final-btn {
+  background: linear-gradient(135deg, #c77aa1, #a8658a);
+  color: #fff;
+  border: none;
+  padding: 14px 26px;
+  border-radius: 28px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Romantic floating decor layer */
+.romantic-decor {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1; /* behind letter, above bg */
+  overflow: hidden;
+}
+
+/* Stars */
+.star {
+  position: absolute;
+  font-size: 18px;
+  opacity: 0;
+  animation: sparkle 6s infinite ease-in-out;
+}
+
+/* Hearts */
+.heart {
+  position: absolute;
+  font-size: 28px;
+  opacity: 0.8;
+  animation: floatHeart 8s infinite ease-in-out;
+}
+
+/* Random positions */
+.star:nth-child(1) {
+  top: 15%;
+  left: 20%;
+  animation-delay: 0s;
+}
+.star:nth-child(2) {
+  top: 35%;
+  right: 25%;
+  animation-delay: 1.5s;
+}
+.star:nth-child(3) {
+  bottom: 20%;
+  left: 40%;
+  animation-delay: 3s;
+}
+
+.heart:nth-child(4) {
+  top: 25%;
+  left: 10%;
+  animation-delay: 0s;
+}
+.heart:nth-child(5) {
+  top: 60%;
+  right: 12%;
+  animation-delay: 2s;
+}
+.heart:nth-child(6) {
+  bottom: 30%;
+  left: 18%;
+  animation-delay: 4s;
+}
+.heart:nth-child(7) {
+  bottom: 15%;
+  right: 22%;
+  animation-delay: 6s;
+}
+
+/* Sparkle animation */
+@keyframes sparkle {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+}
+
+/* Floating hearts */
+@keyframes floatHeart {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-20px) scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.7;
+  }
+}
+
+/* Generic emoji */
+.emoji {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+/* Hearts */
+.emoji.heart {
+  font-size: 30px;
+  animation: floatHeartSlow 10s infinite ease-in-out;
+}
+
+/* Sparkles / flowers */
+.emoji.sparkle {
+  font-size: 20px;
+  animation: sparkleDrift 8s infinite ease-in-out;
+}
+
+/* Positions */
+.emoji:nth-child(1) {
+  top: 12%;
+  left: 15%;
+  animation-delay: 0s;
+}
+.emoji:nth-child(2) {
+  top: 45%;
+  right: 18%;
+  animation-delay: 2s;
+}
+.emoji:nth-child(3) {
+  bottom: 20%;
+  left: 25%;
+  animation-delay: 4s;
+}
+
+.emoji:nth-child(4) {
+  top: 20%;
+  right: 30%;
+  animation-delay: 1s;
+}
+.emoji:nth-child(5) {
+  bottom: 35%;
+  right: 10%;
+  animation-delay: 3s;
+}
+.emoji:nth-child(6) {
+  bottom: 12%;
+  left: 40%;
+  animation-delay: 5s;
+}
+
+/* Animations */
+@keyframes floatHeartSlow {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-25px) scale(1.05);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes sparkleDrift {
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-10px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.8);
+  }
+}
+
+/* Make sure container can hold absolute elements */
+.loveletter-container {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Emoji layer inside letter */
+.letter-emojis {
+  position: absolute;
+  inset: 0;
+  z-index: 1; /* behind text */
+  pointer-events: none;
+}
+
+/* Actual emojis */
+.letter-emoji {
+  position: absolute;
+  font-size: 22px;
+  opacity: 0.25; /* VERY SOFT */
+  animation: letterFloat 9s infinite ease-in-out;
+}
+
+/* Positions */
+.letter-emoji:nth-child(1) {
+  top: 18%;
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.letter-emoji:nth-child(2) {
+  top: 40%;
+  right: 25%;
+  animation-delay: 2s;
+}
+
+.letter-emoji:nth-child(3) {
+  bottom: 30%;
+  left: 30%;
+  animation-delay: 4s;
+}
+
+.letter-emoji:nth-child(4) {
+  bottom: 18%;
+  right: 20%;
+  animation-delay: 6s;
+}
+
+/* Float animation */
+@keyframes letterFloat {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.15;
+  }
+  50% {
+    transform: translateY(-15px) scale(1.1);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.15;
+  }
+}
+
+/* Text always on top */
+.letter-text {
+  position: relative;
+  z-index: 2;
+}
+
+/* 💛 GOLD GLASS SHIMMER — VISIBLE & ELEGANT */
+/* 💛✨ STRONGER GOLD SHIMMER — CLEARLY VISIBLE */
+.loveletter-container::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 1;
+
+  background: linear-gradient(
+    120deg,
+    rgba(255, 200, 90, 0.15),
+    rgba(255, 235, 180, 0.45),
+    rgba(255, 215, 120, 0.2),
+    rgba(255, 235, 180, 0.45),
+    rgba(255, 200, 90, 0.15)
+  );
+
+  opacity: 0.9;
+  filter: blur(8px);
+  mix-blend-mode: screen;
+  animation: goldShimmer 5.5s ease-in-out infinite;
+}
+
+/* ✨ Moving golden light */
+@keyframes goldShimmer {
+  0% {
+    transform: translateX(-45%);
+    opacity: 0.55;
+  }
+  50% {
+    transform: translateX(45%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-45%);
+    opacity: 0.55;
+  }
+}
+
+/* 💎 Warm golden inner glow */
+.loveletter-container {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12),
+    inset 0 0 28px rgba(255, 210, 120, 0.35);
+}
+
+/* 💓 Emoji reaction after typing ends */
+.emoji-react .letter-emoji {
+  animation: emojiPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes emojiPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: scale(1.25);
+    opacity: 0.35;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.2;
+  }
+}
+
+/* ✍️ Signature */
+.loveletter-signature {
+  margin-top: 26px;
+  font-family: "Dancing Script", cursive;
+  font-size: 22px;
+  text-align: center;
+  color: #d47979;
+  opacity: 0;
+  animation: signatureReveal 1.6s ease forwards;
+}
+
+.signature-name {
+  font-size: 24px;
+}
+
+@keyframes signatureReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ✍️ Handwritten signature animation */
+.handwriting {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  animation: writeName 2.8s steps(30, end) forwards;
+  animation-delay: 0.4s;
+}
+
+/* ⏸ Pause shimmer while signature writes */
+.pause-shimmer::after {
+  animation-play-state: paused;
+  opacity: 0.9; /* stays glowing, just stops moving */
+}
+
+/* Smooth ink reveal */
+@keyframes writeName {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.handwriting::after {
+  content: "|";
+  margin-left: 4px;
+  animation: blinkCursor 1s infinite;
+}
+
+@keyframes blinkCursor {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+
+/* ✨ Gold sparkles near signature */
+.signature-sparkles {
+  position: absolute;
+  bottom: 90px; /* near signature */
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.signature-sparkles span {
+  position: absolute;
+  font-size: 16px;
+  color: #ffd36a;
+  opacity: 0;
+  animation: signatureSparkle 2.6s ease-in-out infinite;
+}
+
+/* individual offsets */
+.signature-sparkles span:nth-child(1) {
+  left: -40px;
+  animation-delay: 0s;
+}
+.signature-sparkles span:nth-child(2) {
+  left: -10px;
+  animation-delay: 0.6s;
+}
+.signature-sparkles span:nth-child(3) {
+  left: 20px;
+  animation-delay: 1.2s;
+}
+.signature-sparkles span:nth-child(4) {
+  left: 50px;
+  animation-delay: 1.8s;
+}
+
+/* ✨ Soft golden twinkle */
+@keyframes signatureSparkle {
+  0% {
+    opacity: 0;
+    transform: translateY(8px) scale(0.7);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-6px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(8px) scale(0.7);
+  }
+}
+
+.signature-mode::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 5, 20, 0.28); /* soft moon dim */
+  backdrop-filter: blur(1px);
+  z-index: 0;
+  animation: moonFadeCycle 4.8s ease-in-out forwards;
+  pointer-events: none;
+}
+
+/* 🌙 Fade in → hold → fade out */
+@keyframes moonFadeCycle {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  65% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

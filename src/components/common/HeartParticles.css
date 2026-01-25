@@ -1,0 +1,36 @@
+.hearts-wrapper {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Emoji heart style */
+.heart-emoji {
+  position: absolute;
+  opacity: 0.7;
+  animation: emojiFloat 6s ease-in-out infinite;
+  filter: drop-shadow(0 0 10px rgba(255, 150, 200, 0.45));
+  user-select: none;
+}
+
+/* Soft floating animation */
+@keyframes emojiFloat {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-14px) scale(1.08);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* 📱 Mobile tuning */
+@media (max-width: 768px) {
+  .heart-emoji {
+    opacity: 0.8;
+  }
+}

@@ -1,0 +1,202 @@
+/* ========== BASE LAYOUT ========== */
+
+.finalstory-container {
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  font-family: "Georgia", serif;
+}
+
+/* ========== START SCREEN ========== */
+
+.tap-to-start {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 10;
+  cursor: pointer;
+}
+
+.tap-to-start-content {
+  max-width: 80%;
+  padding: 1.8rem 2.2rem;
+  text-align: center;
+  color: #fff;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  line-height: 1.6;
+  border-radius: 14px;
+
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 40px rgba(255, 150, 200, 0.25);
+  animation: fadeInSoft 1.5s ease forwards;
+}
+
+@keyframes fadeInSoft {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .tap-to-start-content {
+    max-width: 90%;
+    font-size: 1.1rem;
+    padding: 1.4rem 1.6rem;
+  }
+}
+
+/* ========== TEXT ANIMATION ========== */
+
+@keyframes textFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========== CINEMATIC STARS CANVAS ========== */
+
+.stars-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.35;
+}
+
+/* ---------- MOBILE OPTIMIZATION ---------- */
+@media (max-width: 768px) {
+  .stars-canvas {
+    opacity: 0.25; /* softer on small screens */
+  }
+}
+
+/* ========== LIGHT PARTICLES (CINEMATIC DUST) ========== */
+
+.particles-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2; /* Same layer as hearts: behind image */
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+/* ---------- MOBILE OPTIMIZATION ---------- */
+@media (max-width: 768px) {
+  .particles-canvas {
+    opacity: 0.6; /* softer on phone */
+  }
+}
+
+/* ========== ROMANTIC GLOW LAYER ========== */
+
+.glow-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 3; /* Behind image, above stars/hearts/particles */
+  pointer-events: none;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 190, 220, 0.25) 0%,
+    rgba(255, 170, 210, 0.18) 25%,
+    rgba(0, 0, 0, 0.45) 70%
+  );
+  animation: glowPulse 8s ease-in-out infinite;
+}
+
+/* Subtle pulsing for cinematic feel */
+@keyframes glowPulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.85;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+/* ---------- MOBILE OPTIMIZATION ---------- */
+@media (max-width: 768px) {
+  .glow-layer {
+    opacity: 0.6; /* softer on phone */
+  }
+}
+
+/* ========== FLOATING HEARTS (BEHIND IMAGE) ========== */
+
+.hearts-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2; /* BELOW image (image is higher) */
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+/* ---------- MOBILE OPTIMIZATION ---------- */
+@media (max-width: 768px) {
+  .hearts-canvas {
+    opacity: 0.65; /* softer on phone */
+  }
+}
+
+@media (max-width: 768px) {
+  .particles-canvas {
+    opacity: 0.4;
+  }
+
+  .hearts-canvas {
+    opacity: 0.45;
+  }
+
+  .glow-layer {
+    display: none; /* Huge performance gain */
+  }
+}
+
+.back-arrow {
+  position: fixed; /* 🔥 ensures it floats above everything */
+  top: 16px;
+  left: 16px;
+
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(6px);
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+
+  z-index: 9999; /* 🔥 higher than all overlays */
+  pointer-events: auto; /* 🔥 ensure it receives clicks */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
