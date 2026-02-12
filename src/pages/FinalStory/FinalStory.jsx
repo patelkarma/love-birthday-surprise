@@ -16,9 +16,9 @@ import img5 from "./assets/images/img5.png";
 import img6 from "./assets/images/img6.png";
 import img7 from "./assets/images/img7.png";
 import img8 from "./assets/images/img8.png";
-import img9 from "./assets/images/img9.png";
+// import img9 from "./assets/images/img9.png";
 import img10 from "./assets/images/img10.png";
-import img11 from "./assets/images/img11.png";
+// import img11 from "./assets/images/img11.png";
 
 export default function FinalStory() {
   const audioRef = useRef(null);
@@ -86,13 +86,13 @@ export default function FinalStory() {
         animation: "soft-zoom",
         duration: 5000,
       },
-      {
-        id: 9,
-        image: img9,
-        text: "But in my heart",
-        animation: "fade",
-        duration: 5000,
-      },
+      // {
+      //   id: 9,
+      //   image: img9,
+      //   text: "But in my heart",
+      //   animation: "fade",
+      //   duration: 5000,
+      // },
       {
         id: 10,
         image: img10,
@@ -100,13 +100,13 @@ export default function FinalStory() {
         animation: "glow",
         duration: 5000,
       },
-      {
-        id: 11,
-        image: img11,
-        text: "This is where I see us.",
-        animation: "finale",
-        duration: 5000,
-      },
+      // {
+      //   id: 11,
+      //   image: img11,
+      //   text: "This is where I see us.",
+      //   animation: "finale",
+      //   duration: 5000,
+      // },
     ],
     [],
   );

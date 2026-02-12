@@ -148,7 +148,7 @@ export default function LoveLetter() {
           <p className="loveletter-signature">
             Forever yours,
             <br />
-            <span className="signature-name handwriting">karma 💗</span>
+            <span className="signature-name handwriting">Priya 💗</span>
           </p>
         )}
       </div>

@@ -23,7 +23,7 @@ const reasons = [
   "I believe in you, even on the days you forget to believe in yourself 🌈 i am here to remind you that you can do evrything you wished to 💘💝",
   "You deserve every happiness this world can offer and i promise to give it to you 🌍✨",
   "And if love could speak, it would say your name in my heartbeat 💓",
-  "Forever yours… your blankie, choosing you in every lifetime 🧸❤️",
+  "Forever yours… your priya, choosing you in every lifetime 🧸❤️",
   "Happy birthday my cute panda 🥹😘💕💗💟 there are more surprises ahead 🥹💟"
 ];
 
